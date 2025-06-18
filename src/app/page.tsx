@@ -1,103 +1,202 @@
-import Image from "next/image";
+import Link from "next/link"
+import Logo from "@/components/layout/logo"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  Github,
+  Zap,
+  Palette,
+  Home,
+  Code2,
+  Award,
+  BarChart3,
+  ArrowRight,
+  Sparkles,
+  CheckCircle,
+  Play,
+  ChevronDown,
+} from "lucide-react"
 
-export default function Home() {
+export default function LandingPage() {
+  const features = [
+    {
+      icon: Code2,
+      title: "Advanced Editor",
+      description: "Rich markdown editor with syntax highlighting and live preview",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: Palette,
+      title: "Beautiful Templates",
+      description: "Professional templates for developers, designers, and students",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: Award,
+      title: "Custom Badges",
+      description: "Create stunning badges to showcase your achievements",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      icon: BarChart3,
+      title: "GitHub Analytics",
+      description: "Real-time stats and insights about your GitHub profile",
+      color: "from-green-500 to-emerald-500",
+    },
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -inset-10 opacity-50">
+          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+          <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen z-10 text-center flex items-center px-6">
+        <div className="max-w-4xl mx-auto">
+          <Badge className="mb-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
+            <Sparkles className="h-3 w-3 mr-1" />
+            Free & Open Source
+          </Badge>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
+            Create Stunning
+            <br />
+            GitHub Profiles
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Professional README generator with GitHub integration, beautiful templates, and comprehensive analytics
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg"
+            >
+              <Play className="h-5 w-5 mr-2" />
+              Get Started Free
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/20 text-black hover:text-white hover:bg-white/10 px-8 py-4 text-lg"
+            >
+              <Github className="h-5 w-5 mr-2" />
+              View Source Code
+            </Button>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="h-6 w-6 text-gray-400" />
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Powerful Features</h2>
+            <p className="text-xl text-gray-300">Everything you need to create professional GitHub profiles</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <Card
+                  key={index}
+                  className="bg-white/5 border-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div
+                      className={`w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center`}
+                    >
+                      <Icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-white">{feature.title}</h3>
+                    <p className="text-gray-400 text-sm">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source Section */}
+      <section className="relative z-10 py-20 px-6 bg-black/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8">
+            <Github className="h-16 w-16 mx-auto mb-4 text-purple-400" />
+            <h2 className="text-4xl font-bold mb-4">Open Source & Free</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              README Pro is completely open source and free to use. Contribute to the project and help make it better
+              for everyone.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="text-center">
+              <CheckCircle className="h-8 w-8 mx-auto mb-2 text-green-400" />
+              <h3 className="font-semibold mb-2">100% Free</h3>
+              <p className="text-sm text-gray-400">No hidden costs or premium features</p>
+            </div>
+            <div className="text-center">
+              <Code2 className="h-8 w-8 mx-auto mb-2 text-blue-400" />
+              <h3 className="font-semibold mb-2">Open Source</h3>
+              <p className="text-sm text-gray-400">MIT licensed, contribute on GitHub</p>
+            </div>
+          </div>
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white/20 text-black hover:text-white hover:bg-white/10"
+          >
+            <Github className="h-5 w-5 mr-2" />
+            Contribute on GitHub
+          </Button>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative z-10 py-20 px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4">Ready to Stand Out?</h2>
+          <p className="text-xl text-gray-300 mb-8">Create your professional GitHub profile in minutes, not hours</p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg"
+            >
+              <Zap className="h-5 w-5 mr-2" />
+              Start Creating Now
+            </Button>
+          </div>
+
+          <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-400" />
+              Free & Open Source
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-400" />
+              No signup required
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
