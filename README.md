@@ -107,7 +107,7 @@ For production deployment on Vercel:
 ### Getting Started
 
 1. **Access the Application**
-   - Visit the live demo at [readme-pro.vercel.app](https://readme-pro.vercel.app)
+   - Visit the live demo at [https://readme-pro-re.vercel.app](https://readme-pro-re.vercel.app/)
    - Or run locally following the installation instructions
 
 2. **Create Your Profile**
