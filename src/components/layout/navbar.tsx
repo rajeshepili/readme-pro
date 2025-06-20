@@ -19,6 +19,16 @@ export function Navbar() {
                         </Button>
 
                         <Button
+                            variant="ghost"
+                            size="sm"
+                            asChild
+                        >
+                            <Link href={"/editor"}>
+                                Editor
+                            </Link>
+                        </Button>
+
+                        <Button
                             variant="outline"
                             size="sm"
                             asChild

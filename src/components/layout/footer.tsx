@@ -63,7 +63,7 @@ export function Footer() {
                             className="p-0 h-auto text-gray-500 hover:text-gray-700"
                             asChild
                         >
-                            <Link href={"https://github.com/Linux-RE/github-profile-readme-generator"} target="_blank">
+                            <Link href={"https://github.com/Linux-RE/github-profile-readme-generator/blob/master/LICENSE"} target="_blank">
                                 View License
                             </Link>
                         </Button>

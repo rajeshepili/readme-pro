@@ -1,5 +1,5 @@
-import Link from "next/link"
-import Logo from "@/components/layout/logo"
+"use client";
+import { motion } from "motion/react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,6 +17,8 @@ import {
   Play,
   ChevronDown,
 } from "lucide-react"
+import SplitText from "@/components/blocks/TextAnimations/SplitText/SplitText"
+import Link from "next/link";
 
 export default function LandingPage() {
   const features = [
@@ -71,33 +73,57 @@ export default function LandingPage() {
             GitHub Profiles
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Professional README generator with GitHub integration, beautiful templates, and comprehensive analytics
-          </p>
+          <SplitText
+            text="Professional README generator with GitHub integration, beautiful templates, and comprehensive analytics"
+            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-5xl mx-auto"
+            delay={100}
+            duration={0.4}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg"
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: [0.27, .29, .24, 1.05] }}
             >
-              <Play className="h-5 w-5 mr-2" />
-              Get Started Free
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/20 text-black hover:text-white hover:bg-white/10 px-8 py-4 text-lg"
-            >
-              <Github className="h-5 w-5 mr-2" />
-              View Source Code
-            </Button>
-          </div>
-        </div>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg"
+                asChild
+              >
+                <Link href={"/editor"}>
+                  <Play className="h-5 w-5 mr-2" />
+                  Get Started Free
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Link>
+              </Button>
+            </motion.div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="h-6 w-6 text-gray-400" />
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: [0.27, .29, .24, 1.05] }}
+            >
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/20 text-black hover:text-white hover:bg-white/10 px-8 py-4 text-lg"
+                asChild
+              >
+                <Link href={"https://github.com/Linux-RE/github-profile-readme-generator"}>
+                  <Github className="h-5 w-5 mr-2" />
+                  View Source Code
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -162,9 +188,12 @@ export default function LandingPage() {
             size="lg"
             variant="outline"
             className="border-white/20 text-black hover:text-white hover:bg-white/10"
+            asChild
           >
-            <Github className="h-5 w-5 mr-2" />
-            Contribute on GitHub
+            <Link href={"https://github.com/Linux-RE/github-profile-readme-generator"}>
+              <Github className="h-5 w-5 mr-2" />
+              Contribute on GitHub
+            </Link>
           </Button>
         </div>
       </section>
@@ -179,9 +208,12 @@ export default function LandingPage() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg"
+              asChild
             >
-              <Zap className="h-5 w-5 mr-2" />
-              Start Creating Now
+              <Link href={"/editor"}>
+                <Zap className="h-5 w-5 mr-2" />
+                Start Creating Now
+              </Link>
             </Button>
           </div>
 
