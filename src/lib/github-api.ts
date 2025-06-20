@@ -120,6 +120,7 @@ export class GitHubAPI {
       try {
         const existing = await api.request(`/repos/${username}/${username}/contents/README.md`)
         sha = existing.sha
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         // README doesn't exist, that's fine
       }

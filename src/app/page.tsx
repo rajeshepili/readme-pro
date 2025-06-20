@@ -7,7 +7,6 @@ import {
   Github,
   Zap,
   Palette,
-  Home,
   Code2,
   Award,
   BarChart3,
@@ -15,7 +14,6 @@ import {
   Sparkles,
   CheckCircle,
   Play,
-  ChevronDown,
 } from "lucide-react"
 import SplitText from "@/components/blocks/TextAnimations/SplitText/SplitText"
 import Link from "next/link";
@@ -117,7 +115,7 @@ export default function LandingPage() {
                 className="border-white/20 text-black hover:text-white hover:bg-white/10 px-8 py-4 text-lg"
                 asChild
               >
-                <Link href={"https://github.com/Linux-RE/github-profile-readme-generator"}>
+                <Link href={"https://github.com/rajeshepili/readme-pro"}>
                   <Github className="h-5 w-5 mr-2" />
                   View Source Code
                 </Link>
@@ -180,7 +178,7 @@ export default function LandingPage() {
             <div className="text-center">
               <Code2 className="h-8 w-8 mx-auto mb-2 text-blue-400" />
               <h3 className="font-semibold mb-2">Open Source</h3>
-              <p className="text-sm text-gray-400">MIT licensed, contribute on GitHub</p>
+              <p className="text-sm text-gray-400">GNU GPL v2 licensed, contribute on GitHub</p>
             </div>
           </div>
 
@@ -190,7 +188,7 @@ export default function LandingPage() {
             className="border-white/20 text-black hover:text-white hover:bg-white/10"
             asChild
           >
-            <Link href={"https://github.com/Linux-RE/github-profile-readme-generator"}>
+            <Link href={"https://github.com/rajeshepili/readme-pro"}>
               <Github className="h-5 w-5 mr-2" />
               Contribute on GitHub
             </Link>

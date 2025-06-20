@@ -7,7 +7,7 @@ export interface ProfileData {
   email: string
   currentWork: string
   currentLearning: string
-  
+
   socialLinks: {
     github: string
     linkedin: string
@@ -53,6 +53,7 @@ export interface ProfileData {
     title: string
     enabled: boolean
     order: number
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     content?: any
   }>
   customSections: Array<{

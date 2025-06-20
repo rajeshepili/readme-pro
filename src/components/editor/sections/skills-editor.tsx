@@ -185,7 +185,7 @@ export function SkillsEditor() {
                 <li>Be honest about your skill levels</li>
                 <li>Focus on skills relevant to your career goals</li>
                 <li>Update your skills regularly as you learn</li>
-                <li>Consider adding emerging technologies you're learning</li>
+                <li>Consider adding emerging technologies you&aposre learning</li>
               </ul>
             </div>
           </CollapsibleContent>

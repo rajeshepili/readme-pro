@@ -103,6 +103,7 @@ export function GistManager() {
       const response = await fetch(`https://api.github.com/gists/${gistId}`)
       if (response.ok) {
         const gistData = await response.json()
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const firstFile = Object.values(gistData.files)[0] as any
 
         const gist = {
@@ -124,6 +125,7 @@ export function GistManager() {
       } else {
         throw new Error("Gist not found")
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error(
         "Failed to fetch gist", {
@@ -133,6 +135,7 @@ export function GistManager() {
     setIsLoading(false)
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const copyGistMarkdown = (gist: any) => {
     const markdown = `### ${gist.title}\n\`\`\`${gist.language.toLowerCase()}\n${gist.content}\n\`\`\``
 

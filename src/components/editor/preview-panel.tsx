@@ -20,6 +20,7 @@ export function PreviewPanel() {
             toast.success("Copied to clipboard!", {
                 description: "Your README markdown has been copied.",
             })
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             toast.error("Failed to copy", {
                 description: "Please try again.",
@@ -70,7 +71,9 @@ export function PreviewPanel() {
                     <div className="p-6">
                         <div className="bg-white border rounded-lg p-6">
                             <div className="prose prose-sm sm:prose lg:prose-lg dark:prose-invert">
-                                <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                    {markdown}
+                                </ReactMarkdown>
                             </div>
                         </div>
                     </div>

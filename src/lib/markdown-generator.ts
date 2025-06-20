@@ -45,7 +45,7 @@ export function generateMarkdown(profileData: ProfileData): string {
     }
   }
 
-  markdown += generateFooter(username)
+  markdown += generateFooter()
   return markdown
 }
 
@@ -87,7 +87,7 @@ function generateAbout(
     about += `📍 **Location:** ${location}\n\n`
   }
 
-  const links = Object.entries(socialLinks).filter(([_, url]) => !!url)
+  const links = Object.entries(socialLinks).filter(([, url]) => !!url)
 
   if (links.length > 0) {
     about += `### 🌐 Connect with me\n\n`
@@ -165,7 +165,7 @@ function generateStats(username: string, stats: ProfileData["stats"]): string {
     `${stats.contributions > 0 ? `- 📈 **Contributions:** ${stats.contributions}\n` : ''}`
 }
 
-function generateFooter(username: string): string {
+function generateFooter(): string {
   let footer = ""
   footer += `### 🙌 Thanks for stopping by!\n`
   return footer

@@ -1,7 +1,7 @@
 "use client"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Settings, User, Wrench, FolderOpen, Layout, Code2, Download } from "lucide-react"
+import { Settings, User, Wrench, FolderOpen, Code2, Download } from "lucide-react"
 import { AboutEditor } from "./sections/about-editor"
 import { ExportPanel } from "./export-panel"
 import { Separator } from "@/components/ui/separator"

@@ -34,6 +34,7 @@ export function ExportPanel() {
       toast.success("Export successful!", {
         description: "Your README has been downloaded as README.md.",
       })
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error("Export failed", {
         description: "There was an error exporting your README.",
@@ -49,6 +50,7 @@ export function ExportPanel() {
       toast.success("Copied to clipboard!", {
         description: "Your README markdown has been copied.",
       })
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error("Failed to copy", {
         description: "Please try again.",
@@ -181,7 +183,7 @@ export function ExportPanel() {
                 >
                   Create a new token
                 </a>{" "}
-                with 'repo' scope
+                with &aposrepo&apos scope
               </div>
             </div>
 
@@ -246,7 +248,7 @@ export function ExportPanel() {
                 <ol className="text-sm text-gray-600 space-y-1 list-decimal list-inside">
                   <li>Create a GitHub personal access token</li>
                   <li>Enter the token in the deploy section</li>
-                  <li>Click "Deploy to GitHub"</li>
+                  <li>Click &quotDeploy to GitHub&quot</li>
                   <li>Your README will be automatically updated</li>
                 </ol>
               </div>

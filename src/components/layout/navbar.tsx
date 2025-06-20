@@ -33,7 +33,7 @@ export function Navbar() {
                             size="sm"
                             asChild
                         >
-                            <Link href={"https://github.com/Linux-RE/github-profile-readme-generator"} target="_blank">
+                            <Link href={"https://github.com/rajeshepili/readme-pro"} target="_blank">
                                 <Github className="h-4 w-4 mr-2" />
                                 GitHub
                             </Link>
